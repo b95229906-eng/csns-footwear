@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSNS Footwear | Step Into Style</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f6f2;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 10vw, 75px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn.dark {
+      background: #111;
+      color: white;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .category {
+      padding: 35px 20px;
+      border-radius: 15px;
+      background: white;
+      text-align: center;
+      border: 1px solid #ddd;
+      transition: .3s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+    }
+
+    .category .icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .whatsapp {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #171717;
+      color: white;
+      max-width: none;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #ddd;
+      margin-top: 15px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .contact-item {
+      margin: 15px 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer p {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <nav>
+      <div class="logo">CSNS FOOTWEAR</div>
+
+      <div>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>STEP INTO STYLE.</h1>
+
+      <p>
+        Discover footwear made for everyday comfort,
+        confidence and style.
+      </p>
+
+      <a href="#products" class="btn">
+        Explore Collection
+      </a>
+
+      <a href="#contact" class="btn dark">
+        Visit Store
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+
+  <section>
+
+    <div class="section-title">
+      <h2>Shop By Category</h2>
+      <p>Find your perfect pair.</p>
+    </div>
+
+    <div class="categories">
+
+      <div class="category">
+        <div class="icon">👟</div>
+        <h3>Men's</h3>
+        <p>Casual & everyday footwear</p>
+      </div>
+
+      <div class="category">
+        <div class="icon">👠</div>
+        <h3>Women's</h3>
+        <p>Stylish footwear for every occasion</p>
+      </div>
+
+      <div class="category">
+        <div class="icon">🥾</div>
+        <h3>Sports</h3>
+        <p>Comfortable active footwear</p>
+      </div>
+
+      <div class="category">
+        <div class="icon">🩴</div>
+        <h3>Casual</h3>
+        <p>Simple footwear for daily life</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+
+    <div class="section-title">
+      <h2>Featured Collection</h2>
+      <p>Sample products for this demo.</p>
+    </div>
+
+    <div class="products">
+
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+          alt="Running Shoes">
+
+        <div class="product-info">
+
+          <h3>Classic Runner</h3>
+
+          <p>Lightweight everyday sneakers.</p>
+
+          <div class="price">₹1,499</div>
+
+          <a
+            class="whatsapp"
+            href="https://wa.me/919999999999?text=Hi%20CSNS%20Footwear,%20I'm%20interested%20in%20the%20Classic%20Runner."
+            target="_blank">
+            Enquire on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+          alt="Casual Shoes">
+
+        <div class="product-info">
+
+          <h3>Urban Classic</h3>
+
+          <p>Clean casual shoes for daily wear.</p>
+
+          <div class="price">₹1,799</div>
+
+          <a
+            class="whatsapp"
+            href="https://wa.me/919999999999?text=Hi%20CSNS%20Footwear,%20I'm%20interested%20in%20the%20Urban%20Classic."
+            target="_blank">
+            Enquire on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
+          alt="Sneakers">
+
+        <div class="product-info">
+
+          <h3>Street Sneaker</h3>
+
+          <p>Modern style with everyday comfort.</p>
+
+          <div class="price">₹1,999</div>
+
+          <a
+            class="whatsapp"
+            href="https://wa.me/919999999999?text=Hi%20CSNS%20Footwear,%20I'm%20interested%20in%20the%20Street%20Sneaker."
+            target="_blank">
+            Enquire on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 4 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80"
+          alt="Casual Sneakers">
+
+        <div class="product-info">
+
+          <h3>Daily Comfort</h3>
+
+          <p>Simple and comfortable everyday footwear.</p>
+
+          <div class="price">₹999</div>
+
+          <a
+            class="whatsapp"
+            href="https://wa.me/919999999999?text=Hi%20CSNS%20Footwear,%20I'm%20interested%20in%20the%20Daily%20Comfort."
+            target="_blank">
+            Enquire on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="about-content">
+
+      <h2>About CSNS Footwear</h2>
+
+      <p>
+        At CSNS Footwear, we believe the right pair of shoes
+        can make every step better.
+      </p>
+
+      <p>
+        From everyday casual footwear to sporty styles,
+        discover options designed for comfort and confidence.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="section-title">
+
+      <h2>Visit CSNS Footwear</h2>
+
+      <p>Come find your next favourite pair.</p>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="contact-item">
+        <strong>📍 Location</strong>
+        <span>CSNS Footwear, Kerala</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>📞 Phone</strong>
+        <span>+91 XXXXX XXXXX</span>
+      </div>
+
+      <div class="contact-item">
+        <strong>🕒 Opening Hours</strong>
+        <span>10:00 AM – 9:00 PM</span>
+      </div>
+
+      <a
+        href="https://wa.me/919999999999"
+        target="_blank"
+        class="btn dark">
+        Chat on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h3>CSNS FOOTWEAR</h3>
+
+    <p>
+      Step into style. Walk with confidence.
+    </p>
+
+    <p>
+      © 2026 CSNS Footwear. Demo website.
+    </p>
+
+  </footer>
+
+</body>
+</html>
